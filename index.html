@@ -7,13 +7,18 @@
   </head>
   <body>
     <h1>AHSAN!</h1>
-    <button onclick="hello()">Click Me</button>
+    <form>
+      <input type="text" placeholder="name" id="name">
+      <input type="submit">
+    </form>
 
     <script>
-      function hello() {
-        alert("Hello World!");
-        console.log("Hello World!");
-      }
-    </script>
+      document.addEventListener('DOMContentLoaded', () =>{
+        document.querySelector('form').onsubmit = () => {
+          const name = document.querySelector('#name').value;
+          alert(`Hello, ${name}`);
+        }
+      })
+    </script> 
   </body>
 </html>

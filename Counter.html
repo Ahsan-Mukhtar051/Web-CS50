@@ -7,10 +7,21 @@
   </head>
   <body>
     <h1>AHSAN!</h1>
-    <button onclick="hello()">Count</button>
+    <button onclick="count()">Count</button>
 
     <script>
-      const counter = 0;
+      let counter = 0;
+      function count() {
+        counter++;
+        document.querySelector("h1").innerHTML = counter;
+        if (counter % 10 === 0) {
+          alert(`Count ${counter}`);
+        }
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('button').onclick = count;
+      });
+     
     </script>
   </body>
 </html>
